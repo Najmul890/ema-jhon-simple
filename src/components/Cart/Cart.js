@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
     const cart =props.cart;
@@ -7,7 +8,8 @@ const Cart = (props) => {
      let total =0;
      for(let i=0; i<cart.length; i++){
          const product =cart[i];
-         total =total +product.price;
+         total =total +product.price * product.quantity;
+         debugger;
          
          
      }
@@ -36,7 +38,9 @@ const Cart = (props) => {
             <p>Total Price: {formatNumber(total)} </p>
             <p><small>Shipping Cost: {shipping} </small></p>
             <p><small>Tax + Vat:{tax} </small></p>
-            <p><small>Total Price: {grandTotal} </small></p>
+            <p><small>Total Price: {grandTotal} </small></p><br/>
+            <Link to="/review"><button className="btn">Review Order</button>
+            </Link>
             
         </div>
     );
