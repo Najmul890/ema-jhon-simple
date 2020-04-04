@@ -4,6 +4,7 @@ import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
+import { Link } from 'react-router-dom';
 
 
 const Shop = () => {
@@ -28,7 +29,7 @@ const Shop = () => {
         let count=1;
         let newCart;
         if(sameProduct){
-            const count=sameProduct.quantity+1;
+             count=sameProduct.quantity+1;
             sameProduct.quantity=count;
             const others=cart.filter(pd =>pd.key !== toBeAddedKey);
             newCart =[...others, sameProduct];
@@ -60,7 +61,10 @@ const Shop = () => {
             
            </div>
            <div className="cart-container">
-               <Cart cart={cart}></Cart>
+               <Cart cart={cart}>
+                 <Link to="/review"><button className="btn">Review Order</button>
+                 </Link>
+               </Cart>
            </div>
             
         </div>
