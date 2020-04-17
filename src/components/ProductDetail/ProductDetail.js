@@ -9,7 +9,7 @@ const ProductDetail = () => {
     const [product, setProduct] =useState(null);
 
     useEffect(() =>{
-       fetch('http://localhost:4700/product/'+ productKey)
+       fetch('https://blooming-spire-77564.herokuapp.com/product/'+ productKey)
        .then(res =>res.json())
        .then(data =>{
            setProduct(data);

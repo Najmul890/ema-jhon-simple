@@ -10,7 +10,7 @@ const Shop = () => {
     const [products, setProducts]=useState([]);
     const[cart, setCart] =useState([]);
     useEffect(()=>{
-        fetch('http://localhost:4700/products')
+        fetch('https://blooming-spire-77564.herokuapp.com/products')
         .then(res=> res.json())
         .then(data =>{
             setProducts(data);
@@ -71,7 +71,7 @@ const Shop = () => {
            </div>
            <div className="cart-container">
                <Cart cart={cart}>
-                 <Link to="/review"><button className="btn">Review Order</button>
+                 <Link to="/review"><button className="main-btn">Review Order</button>
                  </Link>
                </Cart>
            </div>

@@ -23,7 +23,7 @@ const Review = () => {
         const savedCart =getDatabaseCart();
         const productKeys =Object.keys(savedCart);
         console.log(productKeys);
-        fetch('http://localhost:4700/getProductsByKey',{
+        fetch('https://blooming-spire-77564.herokuapp.com/getProductsByKey',{
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -62,9 +62,9 @@ const Review = () => {
               {
                 auth.user ?
                 <button
-               className="btn">Proceed Checkout</button>
+               className="main-btn">Proceed Checkout</button>
                :
-               <button className="btn">Login to Proceed</button>
+               <button className="main-btn">Login to Proceed</button>
                }
               </Link>
             </Cart> 
